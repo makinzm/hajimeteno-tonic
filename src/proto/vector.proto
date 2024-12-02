@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package vector;
+
+service VectorService {
+  // ベクトルをIDで取得するRPC
+  rpc GetVector (VectorRequest) returns (VectorResponse);
+
+  // Key-Value形式でベクトルを挿入するRPC
+  rpc InsertVector (InsertVectorRequest) returns (InsertVectorResponse);
+
+  // Key-Value形式でベクトルをキーで取得するRPC
+  rpc GetVectorByKey (GetVectorByKeyRequest) returns (VectorResponse);
+
+  // 指定されたIDで自動生成されたベクトルを挿入するRPC
+  rpc InsertSample (InsertSampleRequest) returns (InsertSampleResponse);
+}
+
+message VectorRequest {
+  int32 id = 1; // ベクトルのID
+}
+
+message VectorResponse {
+  int32 id = 1;
+  repeated float vector = 2; // 256次元のベクトル
+}
+
+message InsertVectorRequest {
+  string key = 1; // ユニークなキー
+  repeated float vector = 2; // 256次元のベクトル
+}
+
+message InsertVectorResponse {
+  bool success = 1;
+}
+
+message GetVectorByKeyRequest {
+  string key = 1; // ユニークなキー
+}
+
+message InsertSampleRequest {
+  int32 id = 1; // 挿入するベクトルのID
+}
+
+message InsertSampleResponse {
+  bool success = 1;
+}
+

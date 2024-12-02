@@ -1,0 +1,101 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "grpcurl@latest": {
+      "last_modified": "2024-11-28T07:51:56Z",
+      "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#grpcurl",
+      "source": "devbox-search",
+      "version": "1.9.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f6qa2gynby9i48xxm9zwdl8gzqc2lmv8-grpcurl-1.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f6qa2gynby9i48xxm9zwdl8gzqc2lmv8-grpcurl-1.9.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2hivpwm61s7b165f6cf54pifrh4r32nk-grpcurl-1.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2hivpwm61s7b165f6cf54pifrh4r32nk-grpcurl-1.9.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/anbxh4q6k9hw4axibr1ycl0ld6rjv98l-grpcurl-1.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/anbxh4q6k9hw4axibr1ycl0ld6rjv98l-grpcurl-1.9.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/k8ah7hw4icpsr726z0nvpnknzqkgz9fn-grpcurl-1.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/k8ah7hw4icpsr726z0nvpnknzqkgz9fn-grpcurl-1.9.1"
+        }
+      }
+    },
+    "protobuf_28@latest": {
+      "last_modified": "2024-09-10T15:01:03Z",
+      "resolved": "github:NixOS/nixpkgs/5ed627539ac84809c78b2dd6d26a5cebeb5ae269#protobuf_28",
+      "source": "devbox-search",
+      "version": "28.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qp5bvaa3yvcd8w9ks33al5vwa04r6s4m-protobuf-28.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/qp5bvaa3yvcd8w9ks33al5vwa04r6s4m-protobuf-28.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1ni0jyc0whng34viad3m8xblm7wxbyy7-protobuf-28.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1ni0jyc0whng34viad3m8xblm7wxbyy7-protobuf-28.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fvf5gk16pn0gx84kdir5mf85ylxhhh24-protobuf-28.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fvf5gk16pn0gx84kdir5mf85ylxhhh24-protobuf-28.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wwxwcwfwbd19912cpzh63851pvh5y1ih-protobuf-28.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wwxwcwfwbd19912cpzh63851pvh5y1ih-protobuf-28.0"
+        }
+      }
+    }
+  }
+}
