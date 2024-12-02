@@ -13,14 +13,16 @@ Launch scylladb
 
 ```shell
 docker pull scylladb/scylla:latest
-docker run --name scylladb -d --network=host scylladb/scylla:latest
+docker run --name scylladb -d -p 9042:9042 scylladb/scylla:latest
 ```
 
 Create a keyspace and a table
 
 ```shell
 docker exec -it scylladb cqlsh
+```
 
+```shell
 CREATE KEYSPACE IF NOT EXISTS vector_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
 CREATE TABLE IF NOT EXISTS vector_keyspace.vectors (
@@ -33,6 +35,9 @@ CREATE TABLE IF NOT EXISTS vector_keyspace.vectors (
 Check table
 
 ```shell
+docker exec -it scylladb cqlsh
+```
+```
 cqlsh> use vector_keyspace;
 cqlsh:vector_keyspace> describe tables;
 
