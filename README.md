@@ -56,7 +56,20 @@ cargo run
 ## Check App
 
 ```shell
-grpcurl -plaintext -d '{
+grpcurl -plaintext -import-path src/proto -proto vector.proto -d '{
   "id": 100
 }' localhost:50051 vector.VectorService/InsertSample
 ```
+Expectation
+```shell
+{
+  "success": true
+}
+```
+
+```shell
+grpcurl -plaintext -import-path src/proto -proto vector.proto -d '{
+  "id": 100
+}' localhost:50051 vector.VectorService/GetVector
+```
+
