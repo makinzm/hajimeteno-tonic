@@ -37,7 +37,7 @@ Check table
 ```shell
 docker exec -it scylladb cqlsh
 ```
-```
+```shell
 cqlsh> use vector_keyspace;
 cqlsh:vector_keyspace> describe tables;
 
@@ -53,3 +53,10 @@ cargo build
 cargo run
 ```
 
+## Check App
+
+```shell
+grpcurl -plaintext -d '{
+  "id": 100
+}' localhost:50051 vector.VectorService/InsertSample
+```
