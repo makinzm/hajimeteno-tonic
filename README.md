@@ -45,5 +45,6 @@ vectors
 ```shell
 devbox shell
 cargo build
+cargo run
 ```
 
