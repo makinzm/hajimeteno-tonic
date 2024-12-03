@@ -1,54 +1,6 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "cassandra@latest": {
-      "last_modified": "2024-11-28T07:51:56Z",
-      "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#cassandra",
-      "source": "devbox-search",
-      "version": "4.1.7",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/szrhyl4shcqkb55cw4ci3xdg9g9z5wi0-cassandra-4.1.7",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/szrhyl4shcqkb55cw4ci3xdg9g9z5wi0-cassandra-4.1.7"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/3iibifxn7jswfzr4c4dwq1qyri7n55wg-cassandra-4.1.7",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/3iibifxn7jswfzr4c4dwq1qyri7n55wg-cassandra-4.1.7"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/5q23wlbl6ckmxkqzvmqy3i8inz4l29wq-cassandra-4.1.7",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/5q23wlbl6ckmxkqzvmqy3i8inz4l29wq-cassandra-4.1.7"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/6dfib5qyq3k12x5p476dbbhm5z617yw4-cassandra-4.1.7",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/6dfib5qyq3k12x5p476dbbhm5z617yw4-cassandra-4.1.7"
-        }
-      }
-    },
     "grpcurl@latest": {
       "last_modified": "2024-11-28T07:51:56Z",
       "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#grpcurl",

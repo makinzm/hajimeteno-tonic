@@ -3,7 +3,6 @@
   "packages": [
     "grpcurl@latest",
     "protobuf_28@latest",
-    "cassandra@latest"
   ],
   "shell": {
     "init_hook": [
