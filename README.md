@@ -56,7 +56,7 @@ cargo run
 ## Check App
 
 ```shell
-grpcurl -plaintext -import-path src/proto -proto vector.proto -d '{
+grpcurl -plaintext -import-path src/proto -proto hello.proto -d '{
   "id": 100
 }' localhost:50051 vector.VectorService/InsertSample
 ```
@@ -68,7 +68,7 @@ Expectation
 ```
 
 ```shell
-grpcurl -plaintext -import-path src/proto -proto vector.proto -d '{
+grpcurl -plaintext -import-path src/proto -proto hello.proto -d '{
   "id": 100
 }' localhost:50051 vector.VectorService/GetVector
 ```
