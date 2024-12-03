@@ -1,2 +1,24 @@
-k8s
+# 除外対象: Kubernetesマニフェスト
+k8s/
 
+# 除外対象: ドキュメント
+README.md
+*.md
+
+# 除外対象: Devbox関連ファイル
+devbox.json
+
+# 除外対象: Cargoのビルドキャッシュと設定
+target/
+**/target/
+Cargo.lock
+
+# 除外対象: Gitの管理ファイル
+.git/
+.gitignore
+
+# 除外対象: IDE関連ファイルやエディタの一時ファイル
+*.swp
+*.log
+*.idea/
+*.vscode/
