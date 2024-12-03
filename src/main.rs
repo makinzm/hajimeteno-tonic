@@ -21,7 +21,6 @@ pub mod vector {
 #[derive(Debug)]
 pub struct MyVectorService {
     session: Session,
-    rng: Mutex<StdRng>,
 }
 
 #[tonic::async_trait]
@@ -145,7 +144,8 @@ impl VectorService for MyVectorService {
         let key = format!("auto_key_{}", id);
 
         // rngをlockして乱数を生成
-        let mut rng = self.rng.lock().await;
+        let rng: Mutex<StdRng> = Mutex::new(StdRng::from_entropy()).into();
+        let mut rng = rng.lock().await;
         let vector: Vec<f32> = (0..256).map(|_| rng.gen_range(0.0..1.0)).collect();
 
         // CQL INSERTクエリの実行
@@ -190,12 +190,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // キー空間の使用
     session.use_keyspace(&keyspace, false).await?;
 
-    // rngの初期化
-    let rng = Mutex::new(StdRng::from_entropy()).into();
-
     let vector_service = MyVectorService {
         session,
-        rng,
     };
 
     let addr = "0.0.0.0:50051".parse()?;
