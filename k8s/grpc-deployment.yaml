@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-service
+  labels:
+    app: grpc-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-service
+  template:
+    metadata:
+      labels:
+        app: grpc-service
+    spec:
+      containers:
+      - name: grpc-service
+        image: hajimeteno-tonic:latest
+        imagePullPolicy: Never # to use local image
+        ports:
+        - containerPort: 50051
+        env:
+        - name: SCYLLA_CONTACT_POINTS
+          value: "scylladb"
+        - name: SCYLLA_PORT
+          value: "9042"
+        - name: SCYLLA_KEYSPACE
+          value: "vector_keyspace"

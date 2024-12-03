@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc-service
+  labels:
+    app: grpc-service
+spec:
+  type: NodePort
+  ports:
+  - port: 50051
+    targetPort: 50051
+    nodePort: 30051  # 30000-32767 の範囲内で選択
+  selector:
+    app: grpc-service
