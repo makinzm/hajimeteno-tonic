@@ -7,8 +7,6 @@ use vector::{
 use scylla::{Session, SessionBuilder};
 use dotenv::dotenv;
 use std::env;
-use std::hash::{Hash, Hasher};
-use std::collections::hash_map::DefaultHasher;
 use futures_util::stream::TryStreamExt;
 use rand::rngs::StdRng;
 use rand::SeedableRng;
@@ -72,17 +70,13 @@ impl VectorService for MyVectorService {
         request: Request<InsertVectorRequest>,
     ) -> Result<Response<InsertVectorResponse>, Status> {
         let insert_req = request.into_inner();
-        let key = insert_req.key;
+        let id = insert_req.key;
+        let key = format!("key_{}", id);
         let vector = insert_req.vector;
 
         if vector.len() != 256 {
             return Err(Status::invalid_argument("Vector dimension must be 256"));
         }
-
-        // キーからハッシュ値を生成してIDとする（簡易的な方法）
-        let mut hasher = DefaultHasher::new();
-        key.hash(&mut hasher);
-        let id = hasher.finish() as i32;
 
         // CQL INSERTクエリの実行
         let query = "INSERT INTO vectors (id, key, vector) VALUES (?, ?, ?)";
