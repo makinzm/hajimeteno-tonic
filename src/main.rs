@@ -15,7 +15,7 @@ use rand::Rng;
 
 // Protobufで定義されたモジュール
 pub mod vector {
-    tonic::include_proto!("vector");
+    tonic::include_proto!("vec");
 }
 
 #[derive(Debug)]
